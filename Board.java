@@ -5,9 +5,7 @@ public class Board {
         JPanel panel = new JPanel(); //makes a new panel
         GridLayout layout = new GridLayout(8,8,1,1); // makes it have a grid layout 8 by 8
         JFrame frame = new JFrame();  // makes a new frame 
-        //JPanel[][] squareArray;
-        //squareArray = new SquareArray[8][8];// can create an array when called 
-        Square[][] squareArray = new Square[8][8];// can create an array when called 
+        Square[][] squareArray = new Square[8][8];// can create an 2D array when called 
         
 public Board()
     {
@@ -15,7 +13,7 @@ public Board()
        
         frame.setContentPane(panel); 
         frame.setTitle("Draught Game");
-        frame.setSize(750,750); // makes the size 500 by 500 
+        frame.setSize(750,750); // makes the size 750 by 750 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel.setLayout(layout); // sets the layoutout to the 8 by 8 when called 
 
@@ -32,6 +30,7 @@ public Board()
           {
             squareArray[j][i].setColour("WHITE");
             panel.add(squareArray[j][i].addButton());
+            
           }
         
             
