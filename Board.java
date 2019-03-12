@@ -24,12 +24,12 @@ public Board()
             if ((i+j) % 2 == 0 )
           {
             squareArray[j][i].setColour("BLACK");
-            panel.add(squareArray[j][i].addButton());
+            panel.add(squareArray[j][i].addButton(false));
           }
           else 
           {
             squareArray[j][i].setColour("WHITE");
-            panel.add(squareArray[j][i].addButton());
+            panel.add(squareArray[j][i].addButton(i<8 && i>4));
             
           }
         

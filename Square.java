@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Square {  
+public class Square implements ActionListener
+ {  
     ImageIcon whiteSquare = new ImageIcon("empty.png");
     ImageIcon blackSquare = new ImageIcon("empty2.png");
     ImageIcon WhiteCounter = new ImageIcon("white.png");
@@ -14,10 +16,20 @@ public class Square {
     private String counter;
     int space = 0;
 
-public Square()
+    public Square()
     {
-     
+        button.addActionListener(this); 
     }
+
+    public void actionPerformed(ActionEvent e)
+    {
+      moveTo(this);
+
+    }
+    Icon getIcon()
+        {
+       return this.button.getIcon();
+        }
     void setColour(String givenColour)
         {
             colour=givenColour;
@@ -28,47 +40,32 @@ public Square()
         {
             counter=counterColour; 
         }
-      
-    JButton setCounter()
-        {
-            if(colour == "WHITE")
-            {
-                 button.setIcon(WhiteCounter);
-            }
-                return button; 
-       }
- 
-   JButton addButton() 
-        {
-            for(int i = 0;i<64;i++)
-            {
-                if(colour == "WHITE" && i<12)
-             {
-                System.out.println(i);
-                button.setIcon(WhiteCounter);
-                return button;
 
-                }
+    void moveTo(Square newSquare)
+        {
+            System.out.println("test");
+        }
+
+   JButton addButton(boolean addPiece) 
+    {
+        if(colour == "WHITE")
+        {
+            if(addPiece)
+                button.setIcon(WhiteCounter);
+            else
+               button.setIcon(whiteSquare);
+        }
             
-            if(colour == "WHITE")
-            {   
-                System.out.println("white");
-                button.setIcon(whiteSquare);
-                return button;
-                
-            }
-             if (colour == "BLACK")
-             { 
-                  System.out.println("black");
-                    button.setIcon(blackSquare);  
-                    return button;
-             }
+        else if (colour == "BLACK")
+        {
+            button.setIcon(blackSquare);  
+        }
               
-        
-        }
         return button;
-        }
     }
+        
+}
+    
     
 
     
