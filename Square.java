@@ -21,7 +21,7 @@ public class Square implements ActionListener
         button.addActionListener(this); 
     }
 
-    public void actionPerformed(ActionEvent e)
+    public void actionPerformed(ActionEvent event)
     {
       moveTo(this);
 
@@ -43,7 +43,9 @@ public class Square implements ActionListener
 
     void moveTo(Square newSquare)
         {
-            System.out.println("test");
+            button.getIcon();
+            button.setIcon(WhiteCounter);
+           
         }
 
    JButton addButton(boolean addPiece) 
