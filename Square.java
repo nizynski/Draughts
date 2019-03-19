@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Square implements ActionListener
+public class Square
  {  
     ImageIcon whiteSquare = new ImageIcon("empty.png");
     ImageIcon blackSquare = new ImageIcon("empty2.png");
@@ -16,18 +16,13 @@ public class Square implements ActionListener
     private String counter;
     int space = 0;
     private static Icon selection1;
-    private static Icon selection2;
+    private static int click = 1;
+   
 
     public Square()
     {
-        button.addActionListener(this); 
     }
 
-    public void actionPerformed(ActionEvent event)
-    {
-      moveTo(this);
-
-    }
     Icon getIcon()
         {
        return this.button.getIcon();
@@ -43,7 +38,14 @@ public class Square implements ActionListener
             counter=counterColour; 
         }
 
-    void moveTo(Square newSquare)
+    void moveTo(Square newSquare){
+        /*{
+        if (click == 1)
+        {
+         newSquare = clickedSquare; 
+         click = click + 1; 
+        }
+        if(click == 2)
         {
             selection1 = button.getIcon();
            // selection2 = button.getIcon();
@@ -66,38 +68,19 @@ public class Square implements ActionListener
             {
                 button.setIcon(WhiteCounter);
             }
+            click = 1;
+        }*/
+    }
             
            
-           
-             
-            //button.removeIcon();
-            
-            //if(setIcon)
-            //{
-            //button.getIcon(whiteSquare);
-            //}
-            //button.removeIcon(this);
-            //if (PieceToMove == null);
-            //{
-              //  PieceToMove == button;
-            //selection1 = button.setIcon(whiteSquare);
-           // selection2 = button.setIcon(WhiteCounter);
-            //}
-           // else
-            //{
-            
-            //button.setIcon(whiteSquare) = selection1;
-            
-
-            
-            //button.setIcon(WhiteCounter);
-             //newSqaure 
-            //}
-            
-            
-            
-           
+        public JButton getButton()
+        {
+            return button;
         }
+    
+    
+           
+        
         
 
    
