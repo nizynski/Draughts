@@ -10,16 +10,19 @@ public class Board implements ActionListener
         JFrame frame = new JFrame();  // makes a new frame 
         Square[][] squareArray = new Square[8][8];// can create an 2D array when called 
 private static JButton clickedSquare;
-private static Square secondSqaure;
+private static JButton secondSquare;
 private static int clicks = 0;
 private int clickedX = -1;
 private int clickedY = -1;
+private String selection;
+
+
 
  public void actionPerformed(ActionEvent event)
     {
       System.out.println("clicked");
       
-      //moveTo(this);
+      
       if(clicks == 0) // search for a counter
       {
         for(int x = 0; x < 8;x++) {
@@ -29,6 +32,8 @@ private int clickedY = -1;
               clickedSquare = (JButton)event.getSource();
               clickedX = x;
               clickedY = y;
+               Square square = new Square();
+             square.moveTo(clickedSquare,secondSquare);
               System.out.println(clickedSquare.getIcon());
 
              }
@@ -40,18 +45,18 @@ private int clickedY = -1;
       {
         clicks = 0;
         for(int x = 0; x < 8;x++) {
-           for(int y=0;y<8;y++) {
-             if(squareArray[x][y] == event.getSource()) 
+           for(int y=0;y < 8;y++) {
+             if(squareArray[x][y].getButton() == event.getSource()) 
+             secondSquare = (JButton)event.getSource();
              {
-               if (clickedSquare.Button.getIcon(WhiteCounter))
-               {
-                 event.setIcon(WhiteCounter);
-               }
+               System.out.println("check");
+            
+              }
 
              }
            }
         }
-      }
+      
     }
 
         

@@ -4,16 +4,16 @@ import java.awt.event.*;
 
 public class Square
  {  
-    ImageIcon whiteSquare = new ImageIcon("empty.png");
-    ImageIcon blackSquare = new ImageIcon("empty2.png");
-    ImageIcon WhiteCounter = new ImageIcon("white.png");
-    ImageIcon RedCounter = new ImageIcon("red.png");
-    JButton button = new JButton();
+     ImageIcon whiteSquare = new ImageIcon("empty.png");
+     ImageIcon blackSquare = new ImageIcon("empty2.png");
+     ImageIcon WhiteCounter = new ImageIcon("white.png");
+     ImageIcon RedCounter = new ImageIcon("red.png");
+     JButton button = new JButton();
 
-    private int x; 
+    private  int x; 
     private int y;
-    private String colour;
-    private String counter;
+    private static String colour;
+    private static String counter;
     int space = 0;
     private static Icon selection1;
     private static int click = 1;
@@ -21,6 +21,7 @@ public class Square
 
     public Square()
     {
+        
     }
 
     Icon getIcon()
@@ -38,38 +39,21 @@ public class Square
             counter=counterColour; 
         }
 
-    void moveTo(Square newSquare){
-        /*{
-        if (click == 1)
+    public void moveTo(JButton firstSquare, JButton secondSquare)
         {
-         newSquare = clickedSquare; 
-         click = click + 1; 
-        }
-        if(click == 2)
-        {
-            selection1 = button.getIcon();
-           // selection2 = button.getIcon();
+            selection1 = firstSquare.getIcon();
+            System.out.println("check colour");
+            // add red counter later 
+             firstSquare.setIcon(whiteSquare);
             
-            System.out.println(selection1);
-            System.out.println(selection2);
-
-            if(selection1 == WhiteCounter)
+            if(secondSquare.getIcon() == whiteSquare)
             {
-                button.setIcon(whiteSquare);
-                selection2 = WhiteCounter;
-               
-                
-                System.out.println(selection2);
-            }  
-            
-            //selection2 = button.getIcon();
-
-            if(selection1==whiteSquare)
-            {
-                button.setIcon(WhiteCounter);
+               secondSquare.setIcon(WhiteCounter);
             }
-            click = 1;
-        }*/
+        
+            
+            
+        
     }
             
            
